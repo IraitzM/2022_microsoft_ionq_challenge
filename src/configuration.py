@@ -14,7 +14,7 @@ qpu_backend = provider.get_backend('ionq.qpu')
 
 # Game levels
 level_config = {
-                '1': {'gates' : ['h', 'x'], 'actions' : 5}, 
-                '2': {'gates' : ['h', 'z', 'y', 'x', 's'], 'actions' : 10}, 
-                '3': {'gates' : ['h', 'z', 'y', 'x', 's','t', 'cx'], 'actions' : 20}
+                '1': {'gates' : ['h', 'x'], 'actions' : 5, 'backend' : simulator}, 
+                '2': {'gates' : ['h', 'z', 'y', 'x', 's'], 'actions' : 10, 'backend' : simulator}, 
+                '3': {'gates' : ['h', 'z', 'y', 'x', 's','t', 'cx'], 'actions' : 20, 'backend' : qpu_backend}
                 }

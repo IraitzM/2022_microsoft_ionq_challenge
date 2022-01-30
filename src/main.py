@@ -67,11 +67,11 @@ def get_random_circuit(level, n):
     for _ in range(random.randint(0,level_config[level]['actions'])):
         gate = random.choice(level_config[level]['gates'])
         qubit = random.randint(0,n-1)
-        if level == 3 and gate == 'cx':
-            control = random.randint(0,n-1)
-            while control == qubit:
-                control = random.randint(0,n-1)
-            circuit = apply_gate(circuit, gate, qubit, control)
+        if level == '3' and gate == 'cx':
+            cbit = random.randint(0,n-1)
+            while cbit == qubit:
+                cbit = random.randint(0,n-1)
+            circuit = apply_gate(circuit, gate, qubit, cbit)
         else:
             circuit = apply_gate(circuit, gate, qubit)
     
@@ -82,7 +82,8 @@ def get_random_circuit(level, n):
     circuit.measure(meas_array,meas_array)
     
     # Set the backend
-    qpu_job = simulator.run(circuit, shots=MAX_SHOTS)
+    backend = level_config[level]['backend']
+    qpu_job = backend.run(circuit, shots=MAX_SHOTS)
 
     # Wait until job is finished
     result = qpu_job.result()
@@ -161,7 +162,8 @@ def start_game(level, qubits):
                 print("Non valid entry")
                 
     # Final measurement
-    qpu_job = simulator.run(circuit, shots=MAX_SHOTS)
+    backend = level_config[level]['backend']
+    qpu_job = backend.run(circuit, shots=MAX_SHOTS)
 
     # Wait until job is finished
     result = qpu_job.result()
