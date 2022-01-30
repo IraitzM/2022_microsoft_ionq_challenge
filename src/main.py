@@ -95,8 +95,8 @@ def score(target, obtained, diff):
     """Computes the final score for the player
 
     Args:
-        target ([type]): [description]
-        obtained ([type]): [description]
+        target (dict): Dictionary with output shots
+        obtained (dict): Dictionary with output shots
         diff (int): Diff in circuit depths
     """
     val = 0
