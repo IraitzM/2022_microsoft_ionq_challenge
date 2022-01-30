@@ -112,7 +112,7 @@ def score(target, obtained, diff):
 def help(target, level):
     """ This function prints the helper text"""
     print(f'This is the obtained result {target} from the default {MAX_SHOTS} shots.')
-    print(f"You can choose the secuence in which you would like to apply your gates, which for your level are: {level_config[level]['gates']}")
+    print(f"You can choose the sequence in which you would like to apply your gates, which for your level are: {level_config[level]['gates']}")
     if level != '3':
         print(" -> Please, specify them as (gate, qubit)")
     else:
