@@ -101,7 +101,10 @@ def score(target, obtained, diff):
     """
     val = 0
     for i in target:
-        val += abs(target[i] - obtained[i])
+        if i in obtained:
+            val += abs(target[i] - obtained[i])
+        else:
+            val += 10
     
     if val == 0:
         print("Congratulations, you nailed it!")

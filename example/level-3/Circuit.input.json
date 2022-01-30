@@ -1,0 +1,1 @@
+{"qubits": 7, "circuit": [{"gate": "h", "targets": [0]}, {"gate": "h", "targets": [3]}, {"gate": "h", "targets": [4]}, {"gate": "x", "targets": [5]}, {"gate": "h", "targets": [5]}, {"gate": "s", "targets": [5]}]}
